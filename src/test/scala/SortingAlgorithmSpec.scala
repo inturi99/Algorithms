@@ -57,4 +57,28 @@ class SortingAlgorithmSpec extends FlatSpec with Matchers {
     val expected = Array(90)
     actual  should  be (expected)
   }
+  "Merge Sort of Empty List ()" should "be ()" in {
+    val input = List.empty[Int]
+    val actual = mergeSort(input)
+    val expected = List.empty[Int]
+    actual  should  be (expected)
+  }
+  "Merge Sort of an  un sorted List (10, 30, 20, 5, 70, 90)" should "be (5, 10, 20, 30, 70, 90)" in {
+    val input = List(10, 30, 20, 5, 70, 90)
+    val actual = mergeSort(input)
+    val expected = List(5, 10, 20, 30, 70, 90)
+    actual  should  be (expected)
+  }
+  "Merge Sort of sorted List (5, 10, 20, 30, 70, 90)" should "be (5, 10, 20, 30, 70, 90)" in {
+    val input = List(5, 10, 20, 30, 70, 90)
+    val actual = mergeSort(input)
+    val expected = List(5, 10, 20, 30, 70, 90)
+    actual  should  be (expected)
+  }
+   "Merge Sort of one element in a  List (90)" should "be ( 90)" in {
+    val input = List(90)
+    val actual = mergeSort(input)
+    val expected = List(90)
+    actual  should  be (expected)
+  }
 }

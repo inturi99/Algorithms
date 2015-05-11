@@ -29,4 +29,20 @@ object SortingAlgorithm  extends App{
     }
     return list
   }
+  //Merge Sort
+  def merge(a: List[Int], b: List[Int]): List[Int] = (a, b) match {
+    case(Nil, _) => b
+    case(_, Nil) => a
+    case (x :: xs, y :: ys) =>
+      if(x < y ) x :: merge(xs, b)
+      else y :: merge(a, ys)
+  }
+  def mergeSort(list: List[Int]): List[Int] = {
+    val  n = list.length / 2
+    if(n == 0 ) list
+    else {
+      val (first, second) = list.splitAt(n)
+      merge(mergeSort(first), mergeSort(second))
+    }
+  }
 }
