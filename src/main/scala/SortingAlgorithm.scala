@@ -45,4 +45,5 @@ object SortingAlgorithm  extends App{
       merge(mergeSort(first), mergeSort(second))
     }
   }
+
 }
