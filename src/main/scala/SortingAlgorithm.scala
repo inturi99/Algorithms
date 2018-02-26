@@ -1,5 +1,19 @@
 package assignment
 object SortingAlgorithm  extends App{
+  // Bubble Sort
+ def bubbleSort(list: Array[Int]): Array[Int] = {
+ for(i <- 0 until (list.length -1)) {
+   for(j <- 0 until (list.length -1 -i)) {
+   if(list(j) > list(j+1)) {
+     val temp = list(j)
+     list(j) = list(j+1)
+     list(j+1)=temp;
+
+  }
+ }
+ }
+ return list;
+}
   //Selection Sort
   def selectionSort(list: Array[Int]): Array[Int] = {
     for (i <- 0 until (list.length -1)){
