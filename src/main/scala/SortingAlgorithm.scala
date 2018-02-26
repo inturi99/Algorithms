@@ -43,6 +43,7 @@ object SortingAlgorithm  extends App{
     }
     return list
   }
+
   //Merge Sort
   def merge(a: List[Int], b: List[Int]): List[Int] = (a, b) match {
     case(Nil, _) => b
@@ -59,5 +60,16 @@ object SortingAlgorithm  extends App{
       merge(mergeSort(first), mergeSort(second))
     }
   }
+
+// Quick Sort
+
+def quickSort(list: List[Int]): List[Int] = list match {
+case Nil => Nil
+case x::Nil => list
+case _=>
+  val pivote = list.head
+  val (before, after) = list.tail.partition(_<pivote)
+  quickSort(before) ++ (pivote :: quickSort(after))
+}
 
 }
